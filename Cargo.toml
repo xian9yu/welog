@@ -1,0 +1,26 @@
+[package]
+name = "welog"
+version = "0.0.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.15", features = ["full"] }
+axum = { version = "0.4.3" }
+tower = "0.4.10"
+tower-http = { version = "0.2", features = ["cors"] }
+futures = "0.3"
+
+# 加载环境配置文件.env
+dotenv = "0.15.0"
+# time
+chrono = "0.4"
+# 数据库交互
+rbatis = { version = "3.0", features = ["mysql", "runtime-async-std-rustls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0"
+rbson = "2.0"
+# logging lib(required)
+log = "0.4"
+fast_log = "1.4"
