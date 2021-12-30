@@ -8,7 +8,6 @@ use axum::{
     AddExtensionLayer, Router,
 };
 use tokio::signal;
-use tower::layer::layer_fn;
 use tower_http::cors::{CorsLayer, Origin};
 
 use crate::handler::index::handler_404;
