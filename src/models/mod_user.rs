@@ -31,7 +31,7 @@ impl Default for User {
 }
 
 impl User {
-    // add user
+    // add
     pub(crate) async fn add(rb: Extension<Arc<Rbatis>>, user: User) -> Option<i64> {
         rb.save(&user, &[]).await.unwrap().last_insert_id
     }

@@ -7,11 +7,11 @@ use std::task::{Context, Poll};
 use tower::Service;
 
 #[derive(Clone)]
-pub struct AuthMiddleware<S> {
+pub struct MyAuth<S> {
     pub(crate) inner: S,
 }
 
-impl<S> Service<Request<Body>> for AuthMiddleware<S>
+impl<S> Service<Request<Body>> for MyAuth<S>
 where
     S: Service<Request<Body>, Response = Response<BoxBody>> + Clone + Send + 'static,
     S::Future: Send + 'static,
